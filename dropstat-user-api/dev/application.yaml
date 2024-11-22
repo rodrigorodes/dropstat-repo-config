@@ -10,7 +10,7 @@ spring:
   application:
     name: ${APPLICATION_NAME:dropstat-user-api}
   datasource:
-    username: root
+    username: user
     password: 12345
     hikari:
       maxLifetime: '600000'
