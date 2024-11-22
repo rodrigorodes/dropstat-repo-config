@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: ${APPLICATION_NAME:dropstat-user-api}
+  datasource:
+    username: root
+    password: 12345
+    hikari:
+      maxLifetime: '600000'
+      minimumIdle: '10'
+      poolName: ${spring.application.name}
+      idleTimeout: '300000'
+      maximumPoolSize: '50'
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/dropstat-db?useSSL=false&serverTimezone=UTC
+    type: com.zaxxer.hikari.HikariDataSource
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: 'true'
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # URL do Eureka Server
+  instance:
+    prefer-ip-address: true
