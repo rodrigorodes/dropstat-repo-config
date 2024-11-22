@@ -47,4 +47,4 @@ spring:
     baseline-on-migrate: true
 sendgrid:
   api:
-    key: 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
+    key: ${{ secrets.SEND_GRID_API_KEY }}
